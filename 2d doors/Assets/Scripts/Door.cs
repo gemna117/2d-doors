@@ -1,8 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour {
+
+    [SerializeField]
+    private string sceneToLoad;
 
     private bool isPlayerInTrigger;
 
@@ -39,6 +43,7 @@ public class Door : MonoBehaviour {
         if(Input.GetButtonDown("activate") && isPlayerInTrigger)
         {
             Debug.Log("player activated door");
+            SceneManager.LoadScene(sceneToLoad);
         }
     }
 }
